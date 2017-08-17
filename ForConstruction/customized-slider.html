@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="http://getbootstrap.com/favicon.ico">
+<title>Starter Template for Bootstrap</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/slick.css"/>
+<link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      a{ transition: all 0.5s; }
+    	.caption-show{ width: 400px; height: 100%; position: absolute; left: 200px; top: 0px; background-color: #fff; z-index: 3; }
+    	.banner{ position: relative; height: auto; }
+    	.slide-caption{ margin:20px 30px; overflow: hidden;}
+      .prev:before{ content: "\f053"; display: inline-block; font-size: 14px; font-family: 'FontAwesome'; color: #000}
+      .next:before{ content: "\f054"; display: inline-block; font-size: 14px; font-family: 'FontAwesome'; color: #000}
+      .prev,.next{ display: inline-block; padding: 5px; background-color: #fdcb42;}
+      .next{ background-color: #fff; }
+      .next:hover{ background-color: #fdcb42; }
+      .slide-caption .slider-controller{ width: 100%; display: block; position: absolute; right: -23px; bottom: 50%; text-align: right; }
+      @media screen and (max-width: 767px){
+
+         .caption-show{ width: 100%; bottom: 0px; height: 200px; left: 0px; top: inherit; background: rgba(255,255,255,0.5); }
+         .slide-caption .slider-controller{ display: none; }
+      }
+    </style>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse no-radius">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand hidden-lg hidden-md hidden-sm visible-xs" href="#">
+        <img src="images/logo.png">
+      </a> 
+    </div>
+    <div style="height: 1px;" aria-expanded="false" id="navbar" class="navbar-collapse collapse">
+      <!-- <ul class="nav navbar-nav nav-right">
+      	 <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+      	 <li>
+      	 <div class="form-group">
+      	 <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+	      	 <div class="select-style">
+	      	 <select>
+	      	 	<option>language</option>
+	      	 	<option>English</option>
+	      	 	<option>Arabic</option>
+	      	 </select>
+	      	 </div>
+      	 </div>
+      	 </li>
+      </ul> -->
+      <ul class="nav navbar-nav full-width">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li class="logo"><a class="nav-logo hidden-xs" href="#"><img src="images/logo.png"></a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      
+      
+      
+      
+      <!-- <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password">
+        </div>
+        <button class="btn btn-success" type="submit">Sign in</button>
+      </form> -->
+    </div>
+    <!--/.nav-collapse --> 
+
+</nav>
+
+<style type="text/css">
+	h1.caption-title,
+	p.caption-text {color:#000;}
+</style>
+
+
+<section class="banner">
+
+        <div class="caption-show animated infinite">
+        	<div class="slide-caption">
+                <h1 class="caption-title animated fadeInLeft">Title One</h1>
+                <p class="caption-text animated fadeInLeft">Splash me dummy lorem text</p>
+                <div class="slider-controller">
+                    <a class="prev" href="#"></a>
+                    <a class="next" href="#"></a>
+                </div>
+            </div>	
+        </div>
+
+
+        
+
+
+
+        <div class="variable-width">
+            <div data-caption="Title One" data-content="splash me dummy lorem1">
+                <img class="responsive" src="images/slide1.jpg">
+            </div>
+            <div data-caption="Title Two" data-content="splash me dummy lorem2">
+                <img class="responsive" src="images/slide1.jpg">
+            </div>
+            <div data-caption="Title Three" data-content="splash me dummy lorem3">
+                <img class="responsive" src="images/slide2.jpg">
+            </div>
+            <div data-caption="Title Four" data-content="splash me dummy lorem4">
+                <img class="responsive" src="images/slide3.jpg">
+            </div>
+            <div data-caption="Title Five" data-content="splash me dummy lorem5">
+                <img class="responsive" src="images/slide4.jpg">
+            </div>
+            <div data-caption="Title Six" data-content="splash me dummy lorem6">
+                <img class="responsive" src="images/slide4.jpg">
+            </div>
+        </div>
+</section>
+<section class="block-session service">
+  <div class="container">
+  <div class="row">
+
+		    <h1 class="text-center">Services</h1>
+		    <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+		        <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+			    <h2>social media sharing</h2>
+			    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus tempor venenatis. Duis vitae lectus egestas, venenatis nunc id, consequat turpis.</p>
+		    </div>
+		    <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+		      <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+		      <h2>quality images</h2>
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus tempor venenatis. Duis vitae lectus egestas, venenatis nunc id, consequat turpis.</p>
+		    </div>
+		    <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+		      <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
+		      <h2>screen capturing</h2>
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus tempor venenatis. Duis vitae lectus egestas, venenatis nunc id, consequat turpis.</p>
+		    </div>
+
+  </div>
+
+  <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12">
+		      
+		      <h2>
+              <i class="fa fa-envira" aria-hidden="true"></i>
+		      screen capturing</h2>
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus tempor venenatis. Duis vitae lectus egestas, venenatis nunc id, consequat turpis.</p>
+		</div>
+
+		<div class="col-md-4 col-sm-4 col-xs-12">
+		      
+		      <h2>
+		      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+		      screen capturing</h2>
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus tempor venenatis. Duis vitae lectus egestas, venenatis nunc id, consequat turpis.</p>
+
+		</div>
+
+		<div class="col-md-4 col-sm-4 col-xs-12">
+		      
+		      <h2>
+              <i class="fa fa-wrench" aria-hidden="true"></i>
+		      screen capturing</h2>
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus tempor venenatis. Duis vitae lectus egestas, venenatis nunc id, consequat turpis.</p>
+		</div>
+  </div>
+
+  <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12">
+		      
+		      <p class="text-center"> 
+              <i class="fa fa-envira fa-5x green" aria-hidden="true"></i>
+              </p>
+
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus tempor venenatis. Duis vitae lectus egestas, venenatis nunc id, consequat turpis.</p>
+		</div>
+
+		<div class="col-md-4 col-sm-4 col-xs-12">
+		      
+              <p class="text-center">
+		      <i class="fa fa-shopping-basket fa-5x basket" aria-hidden="true"></i>
+		      </p>
+
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus tempor venenatis. Duis vitae lectus egestas, venenatis nunc id, consequat turpis.</p>
+
+		</div>
+
+		<div class="col-md-4 col-sm-4 col-xs-12">
+		      
+              <p class="text-center">
+              <i class="fa fa-wrench fa-5x wrench" aria-hidden="true"></i>
+              </p>
+
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus tempor venenatis. Duis vitae lectus egestas, venenatis nunc id, consequat turpis.</p>
+		</div>
+
+    <div class="col-md-12">
+        <ul class="checklist">
+           <li class="current"><a href="javascript:void(0)">one</a></li>
+           <li><a href="javascript:void(0)">two</a></li>
+           <li><a href="javascript:void(0)">three</a></li>
+           <li><a href="javascript:void(0)">four</a></li>
+        </ul>
+
+        <ul class="checklist2">
+           <li><a href="javascript:void(0)">one</a></li>
+           <li><a href="javascript:void(0)">two</a></li>
+           <li><a href="javascript:void(0)">three</a></li>
+           <li><a href="javascript:void(0)">four</a></li>
+        </ul>
+
+        <a class="color">color it!</a>
+
+
+    </div>
+
+  </div>
+  
+  
+
+</section>
+<div class="container">
+  <form class="form-inline">
+    <div class="input-group">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <select class="form-control">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </div>
+      <button type="button" class="btn btn-default">
+  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
+</button>
+    </div>
+    <!-- /input-group -->
+  </form>
+</div>
+</div>
+</div>
+</div>
+<!-- /.container --> 
+
+<!-- Bootstrap core JavaScript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.js"></script> 
+<script src="js/slick.min.js"></script> 
+<script>
+    $(document).ready(function() {
+
+        $('.single-item').slick();
+        $('.variable-width').slick({
+  dots: true,
+  speed: 300,
+  slidesToShow: 4,
+  variableWidth: true,
+  prevArrow: $('.prev'),
+  nextArrow: $('.next'),
+  centerMode:true
+});
+
+        var caption = $('.slide-caption h1').html();
+        var text = $('.slide-caption p').html();
+
+        $('.variable-width').on('afterChange', function(){
+        	 $('.caption-title,.caption-text').addClass('animated fadeInLeft');
+        	 var dCaption = $('.slick-slide.slick-current.slick-active').attr('data-caption');
+        	 var dContent = $('.slick-slide.slick-current.slick-active').attr('data-content');
+        	 console.log(dCaption  + dContent );
+        	 $('.caption-title').text(dCaption);
+        	 $('.caption-text').text(dContent);
+           });
+         $('.variable-width').on('beforeChange', function(){
+                              $('.caption-title,.caption-text').removeClass('animated fadeInLeft');
+         });
+
+         // $(".next").click(function(){
+         //    $('.variable-width').slickNext();
+         // });
+         // $(".prev").click(function(){
+         //    $('.variable-width').slickPrev();
+         // });
+        
+
+          $('ul.navbar-nav').find('a').click( function(){
+              $(this).parent().addClass('active')
+                     .siblings().removeClass('active');             
+          });
+
+          $('ul.checklist').find('a').click( function(){
+              $(this).parent().toggleClass('current');              
+          });
+          $('.color').click( function(){
+              $( "ul.checklist2 li:odd" ).css( "background-color", "#bbbbff" ); 
+          });
+
+        });
+	</script>
+</body>
+</html>

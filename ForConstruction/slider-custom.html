@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>custom slider</title>
+	<style>
+*{
+    padding:0;
+    margin:0;
+}
+ul li {
+    float:left;
+    list-style:none;
+    position:relative;
+}
+ul li a{
+    /*text-indent:-9999px;*/
+    outline:none;
+    cursor: pointer;
+    height: 30px;
+    width: 35px;
+    z-index: 9999;
+}
+ul li a.next {
+    position:absolute;
+    left:100px;
+}
+ul li a.previous{
+    position:absolute;
+    left:0px;
+}
+ul li a.startover{
+    position:absolute;
+    left:200px;
+}
+/*styled*/
+div#container{
+    border:1px solid #666666;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    padding:13px;
+    clear:both;
+    overflow:hidden;
+    width:620px;
+    position:relative;
+    top:35px;
+    margin:0 auto;
+    background:#ebebeb;
+    -moz-box-shadow: 0px 45px 33px -32px #000;
+    -webkit-box-shadow: 0px 45px 33px -32px #000;
+    box-shadow: 0px 45px 33px -32px #000;
+    display:block;
+}
+ul li a.next.red{
+    background:url(images/next-red.png);
+    width:57px;
+    height:73px;
+    position:absolute;
+    left:560px;
+    top:237px;
+}
+ul li a.next.green{
+    background:url(images/next-green.png);
+    width:67px;
+    height:67px;
+    position:absolute;
+    top:286px;
+    left:486px;
+}
+ul li a.previous.green{
+    background:url(images/prev-green.png);
+    width:67px;
+    height:67px;
+    position:absolute;
+    top:286px;
+    left:105px;
+}
+ul li a.next.orange{
+    background:url(images/next-orange.png);
+    width:239px;
+    height:62px;
+    position:absolute;
+    left:360px;
+    top:300px;
+}
+ul li a.previous.orange{
+    background:url(images/prev-orange.png);
+    width:239px; height:62px;
+    position:absolute;
+    left:20px;
+    top:300px;
+}
+ul li a.next.blue{
+    background:url(images/next-blue.png);
+    width:57px;
+    height:129px;
+    position:absolute;
+    top:150px;
+    left:562px;
+}
+ul li a.previous.blue{
+    background:url(images/prev-blue.png);
+    width:58px;
+    height:129px;
+    position:absolute;
+    top:150px;
+}
+ul li a.previous.silver{
+    background:url(images/previous-silver.png);
+    width:49px;
+    height:50px;
+    position:absolute;
+    top:305px;
+    left:360px;
+}
+ul li a.startover {
+    background:url(images/startover.png);
+    width:176px;
+    height:73px;
+    position:absolute;
+    top:280px;
+    left:420px;
+}
+</style>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script>
+$(window).load (function() {
+	var theImage = $('ul li p');
+	var theWidth = theImage.width()
+	//wrap into mother div
+	$('ul').wrap('<div id="mother" />');
+	//assign height width and overflow hidden to mother
+	$('#mother').css({
+		width: function() {
+		return theWidth;
+	  },
+		height: function() {
+		return theImage.height();
+	  },
+		position: 'relative',
+		overflow: 'hidden'
+	});
+		//get total of image sizes and set as width for ul
+	var totalWidth = theImage.length * theWidth;
+	$('ul').css({
+		width: function(){
+		return totalWidth;
+	}
+	});
+});//doc ready
+
+$(theImage).each(
+  function(intIndex){
+    $(this).nextAll('a')
+  	.bind("click", function(){
+  		if($(this).is(".next"))	{
+  			$(this).parent('li').parent('ul').animate({
+  				"margin-left": (-(intIndex + 1) * theWidth)
+  					}, 1000)
+  			} else if($(this).is(".previous")){
+  			$(this).parent('li').parent('ul').animate({
+  				"margin-left": (-(intIndex - 1) * theWidth)
+  			}, 1000)
+  			} else if($(this).is(".startover")){
+  			$(this).parent('li').parent('ul').animate({
+  				"margin-left": (0)
+  			}, 1000)
+  	}
+	});//close .bind()
+});//close .each()
+
+</script>
+</head>
+<body>
+
+<ul>
+  <li>
+  <p>ppppp</p>
+  <a class="next" href="#">next</a>
+  </li>
+  <li>
+  <p>ppppp</p>
+  <a class="next" href="#">next</a>
+  <a class="previous" href="#">prev</a>
+  </li>
+  <li>
+  <p>ppppp</p>
+  <a class="next" href="#">next</a>
+  <a class="previous" href="#">prev</a>
+  </li>
+  <li>
+  <p>ppppp</p>
+  <a class="next" href="#">next</a>
+  <a class="previous" href="#">prev</a>
+  </li>
+  <li>
+  <p>ppppp</p>
+  <a class="previous" href="#">prev</a>
+  <a class="startover" href="#">startover</a>
+  </li>
+</ul>
+</body>
+</html>
+
+
+

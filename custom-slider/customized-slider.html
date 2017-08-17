@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="http://getbootstrap.com/favicon.ico">
+<title>Starter Template for Bootstrap</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/slick.css"/>
+<link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+
+<section class="banner">
+
+        <div class="caption-show animated infinite">
+        	<div class="slide-caption">
+                <h1 class="caption-title animated fadeInLeft">Title One</h1>
+                <p class="caption-text animated fadeInLeft">Splash me dummy lorem text</p>
+                <div class="slider-controller">
+                    <a class="prev" href="#"></a>
+                    <a class="next" href="#"></a>
+                </div>
+            </div>	
+        </div>
+
+        <div class="variable-width">
+            <div data-caption="Title One" data-content="splash me dummy lorem1">
+                <img class="responsive" src="images/slide1.jpg">
+            </div>
+            <div data-caption="Title Two" data-content="splash me dummy lorem2">
+                <img class="responsive" src="images/slide1.jpg">
+            </div>
+            <div data-caption="Title Three" data-content="splash me dummy lorem3">
+                <img class="responsive" src="images/slide2.jpg">
+            </div>
+            <div data-caption="Title Four" data-content="splash me dummy lorem4">
+                <img class="responsive" src="images/slide3.jpg">
+            </div>
+            <div data-caption="Title Five" data-content="splash me dummy lorem5">
+                <img class="responsive" src="images/slide4.jpg">
+            </div>
+            <div data-caption="Title Six" data-content="splash me dummy lorem6">
+                <img class="responsive" src="images/slide4.jpg">
+            </div>
+        </div>
+</section>
+
+
+</div>
+</div>
+</div>
+<!-- /.container --> 
+
+<!-- Bootstrap core JavaScript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.js"></script> 
+<script src="js/slick.min.js"></script> 
+<script>
+    $(document).ready(function() {
+
+
+        $('.variable-width').slick({
+          dots: true,
+          speed: 300,
+          slidesToShow: 4,
+          variableWidth: true,
+          prevArrow: $('.prev'),
+          nextArrow: $('.next'),
+          centerMode:true
+        });
+
+        var caption = $('.slide-caption h1').html();
+        var text = $('.slide-caption p').html();
+
+        $('.variable-width').on('afterChange', function(){
+        	 $('.caption-title,.caption-text').addClass('animated fadeInLeft');
+        	 var dCaption = $('.slick-slide.slick-current.slick-active').attr('data-caption');
+        	 var dContent = $('.slick-slide.slick-current.slick-active').attr('data-content');
+        	 console.log(dCaption  + dContent );
+        	 $('.caption-title').text(dCaption);
+        	 $('.caption-text').text(dContent);
+           });
+         $('.variable-width').on('beforeChange', function(){
+                $('.caption-title,.caption-text').removeClass('animated fadeInLeft');
+         });
+
+          
+        });
+	</script>
+</body>
+</html>

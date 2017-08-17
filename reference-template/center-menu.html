@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Center Menu</title>
+<style type="text/css">
+		
+	.header {
+    clear: both;
+    max-width:1000px;
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/*  9-b == .logo-sm
+ -------------------------------------------------------------------------------------------- */
+.logo-sm {
+    clear: both;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.logo-sm img {
+    max-height: 100px;
+    margin: 0 auto;
+    width: auto;
+}
+
+.logo-lg {
+    display: none;/* hide the large logo */
+}
+
+
+
+/*  9-c == larger viewports :: .nav-wrapper // .nav-right // .nav-left // .logo-lg
+ -------------------------------------------------------------------------------------------- */
+
+@media (min-width:768px) { 
+
+	.nav-wrapper {
+	    padding: 20px 0;
+	    float: left;
+	    width: 100%;
+	}
+	.nav-left {
+	    float: left;
+	    width: 45%;
+	}
+	.nav-left .primary-nav {
+	    float: right
+	}
+	.nav-right {
+	    float: left;
+	    width: 45%;
+	}
+	
+	/*--------- logo ----------------------- */
+	.logo-sm {display:none;} /* hide the small logo */
+
+	.logo-lg {
+		display:block;
+	    float: left;
+	    width: 10%;
+	}
+	.logo-lg img {
+	    display: block;
+	    margin: 0 auto;
+	    width: auto;
+	    max-height: 125px;
+	}
+	/*--------- vertically center the nav with the logo  ----------------------- */
+	.nav-left, .nav-right {
+	    padding-top:53px; /* height of logo + 40px padding divided by 2 minus height of nav (30px) */
+	}
+}
+
+@media (min-width:992px) { 
+	.logo-lg img {
+	    display: block;
+	    margin: 0 auto;
+	    max-height: 150px;
+	}
+	/*--------- vertically center the nav with the logo  ----------------------- */
+	.nav-left, .nav-right {
+	    padding-top:65px;/* height of logo + 40px padding divided by 2 minus height of nav (30px) */
+	}
+}
+
+@media (min-width:1200px) { 
+	.logo-lg img {
+	    display: block;
+	    margin: 0 auto;
+	    max-height: 200px;
+	}
+	/*--------- vertically center the nav with the logo  ----------------------- */
+	.nav-left, .nav-right {
+	    padding-top:90px; /* height of logo + 40px padding divided by 2 minus height of nav (30px) */
+	}
+	
+}
+
+/*  9-d == larger viewport :: responsive spacing between top level links
+ -------------------------------------------------------------------------------------------- */
+@media (min-width:768px) { 	
+	.nav-left .primary-nav > li {
+	    padding-right:25px;
+	}
+
+	.nav-right .primary-nav > li {
+	  padding-left:25px;
+	}
+}
+
+@media (min-width:992px) { 
+
+	.nav-left .primary-nav > li {
+	    padding-right:35px;
+	}
+
+	.nav-right .primary-nav > li {
+	  padding-left:35px;
+	}
+}
+
+@media (min-width:1200px) { 
+
+	.nav-left .primary-nav > li {
+	    padding-right:50px;
+	}
+
+	.nav-right .primary-nav > li {
+	 	padding-left:50px;
+	}
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------
+  [10] Main Menu // .toggle-menu // .primary-nav base and larger viewports 
+-------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*  10-a == .toggle-menu
+ -------------------------------------------------------------------------------------------- */
+ .toggle-menu {
+    color: #fff;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    display: block;
+    z-index: 100;
+     background: #444;
+}
+ .toggle-menu:hover, 
+ .toggle-menu:active,  
+ .toggle-menu:focus {
+    color: #ccc;
+}
+
+.toggle-menu .fa {
+    font-size: 22px;
+    position: absolute;
+    top: 8px;
+    left: 10px;
+}
+
+.menu-open .toggle-menu i:before {
+    content: "\f00d"
+}
+
+.toggle-menu:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 80px;
+    height: 80px;
+   
+    /*-webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);*/
+    top: 0px;
+    left: 0px;
+    display: block;
+}
+
+@media (min-width:768px) { 
+	.toggle-menu {
+	    display: none
+	}
+}
+
+/*  10-b == .primary-nav base
+ -------------------------------------------------------------------------------------------- */
+.primary-nav,
+.primary-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+}
+
+/*--------- children icon ----------------------- */
+.primary-nav .has-children > a:after {
+    content: "\f0d7";
+    position: relative;
+    display: inline;
+    top:-1px;
+    font-size: 10px;
+    left:10px;
+    font-family: fontawesome;
+}
+.primary-nav .has-children > .active:after { content: "\f0d8" }
+
+/*--------- primary-nav link colors and styles ----------------------- */
+.primary-nav a{
+    color: #555;
+}
+.primary-nav .active > a {
+    color: #cacaca;
+   /* border-bottom:2px solid #555;*/
+}
+.primary-nav a:hover, 
+.primary-nav .dcjq-parent.active {
+    color: #ec5004
+}
+
+/*  10-c == smaller viewport menu styles
+ -------------------------------------------------------------------------------------------- */
+@media (max-width:767px) { 
+	#nav {
+	    display: none
+	}
+	#nav {
+	    width: 100%;
+	    padding-top: 30px;
+	}
+	.primary-nav {
+	    text-align: center
+	}
+	.primary-nav a {
+	    display: block;
+	    padding: 8px;
+	    font-size:16px;
+	    color:#fff;
+	    border-bottom:0px;
+	    text-decoration: none;
+	    background-color: #333;
+	}
+	.primary-nav > li.has-children a {
+	    padding-right: 20px
+	}
+	
+	.primary-nav ul {
+	    border-top:2px solid #444;
+	    border-bottom:2px solid #444;
+	}	
+	.primary-nav a:hover{ background-color: #000; }
+}
+
+/*  10-d == larger viewport menu styles
+ -------------------------------------------------------------------------------------------- */
+@media (min-width:768px) { 
+
+	#nav {display:block!important;}
+
+	.primary-nav {
+	    position: relative
+	}
+	.primary-nav a {
+	    display: block;
+	    padding: 0;
+	    text-transform: lowercase;
+	}
+	.primary-nav ul li a {
+	    padding: 5px 10px 5px 15px;
+	}
+	.primary-nav > li.has-children a {
+	    padding-right: 10px
+	}
+	.primary-nav > li {
+	    float: left;
+	    position: relative;
+	    margin: 0;
+	}
+	.primary-nav li {
+	    position: relative;
+	}
+	.primary-nav ul {
+	    display: none
+	}
+	.primary-nav > li > ul {
+	    position: absolute;
+	    top: 50px;
+	    width: 250px;
+	    background: #fff;
+	    border:4px double #999;
+	    padding: 10px 0;
+	    z-index:2000;
+	}
+}
+
+/*  10-e == .primary-nav font sizes
+ -------------------------------------------------------------------------------------------- */
+
+@media (min-width:768px) { 
+	.primary-nav > li > a{
+	    font-size: 14px
+	}
+}
+
+@media (min-width:1000px) { 
+	.primary-nav > li > a{
+	    font-size: 18px
+	}
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------
+  [13] search
+-------------------------------------------------------------------------------------------------------------------------------------*/
+.search-wrapper {
+    background: #444; /* color of border on entire document */
+    position: absolute;
+    top: -55px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px 0; 
+    text-align: center;
+}
+
+.search-wrapper a{
+	transition: all 500ms ease-in-out
+}
+
+.search-wrapper .form{ display: block; }
+
+
+.search-wrapper .form-control {
+	position:relative;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+    top:-100px;
+    width: 80%;
+}  
+
+
+.toggle-search {
+    position: absolute;
+    top:65px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    display: block;
+    z-index: 1000;
+    overflow: hidden;
+     background: #444;
+} 
+.toggle-search {
+    color: #fff
+}
+.toggle-search:hover, .toggle-search:focus, .toggle-search:active {
+    color: #ccc
+}
+
+.toggle-search .fa { 
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+}
+
+.toggle-search:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 80px;
+    height: 80px;
+    /* color of border on entire document */
+    /*-webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);*/
+    top: 0px;
+    right: 0px;
+    display: block;
+}
+
+
+
+
+/*  13-c == .search-open styles 
+ -------------------------------------------------------------------------------------------- */
+.search-wrapper,
+.search-open .toggle-menu,
+.search-open body,
+.search-open .search-wrapper .form-control {
+    transition: all 500ms ease-in-out
+}
+.search-open .search-wrapper {
+    top: 0px; /* height of top body border at this size */
+}
+.search-open body {
+    padding-top: 50px
+}
+.search-open .search-wrapper .form-control {
+    top:0;
+}
+.search-open .toggle-search i:before {
+    content: "\f00d"
+}
+.search-open .toggle-menu {
+    left: -100%
+}
+
+@media (min-width:768px) { 
+	.search-open .search-wrapper {
+	    top: 0px;
+	    /* height of top body border at this size */
+	}
+}
+
+
+
+	</style>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<a href="#" class="toggle-menu"><i class="fa fa-bars"></i></a>
+<header class="header clearfix">
+
+  <!-- ____________ SMALL VIEWPORT LOGO _____________  -->
+ <div class="logo-sm">
+     <a href="#"><img src="http://bombdiggitydesign.com/wrap-n-roll/middle/assets/images/logo.png" alt="company name"></a>
+ </div>
+ <!-- /sm-logo -->  
+ <nav id="nav" class="clearfix" role="navigation"> 
+  
+  <!-- ____________ Primary Menu _______________  --> 
+  <!-- This is a very specific use case. In order for the navigation and logo to appear center, 
+ the links must be approx the same character width on either side. All ways of doing this such as 
+ http://stanislav.it/how-to-center-a-logo-in-unordered-list-navigation-using-css3-nth-child-selector/
+ require fudging the logo and also having the top level to be around the same character lengths 
+ and the same number of links on either side because the logo position will be off center --> 
+  
+  <div class="nav-wrapper clearfix">
+  
+  <!-- left side of logo -->
+  <div class="nav-left">
+   <ul class="primary-nav">
+    <li class="active"><a href="index.html">Home</a></li>
+    <!-- add class .active on li item when the page is current -->
+    <li><a href="your-link-here.html">About</a></li>
+    <li class="has-children dcjq-parent-li"><a href="#" class="dcjq-parent">Portfolio<span class="dcjq-icon"></span></a> <!-- add class .has-children on li item if the li has babies -->
+     <ul>
+      <li><a href="your-link-here.html">Portfolio Child Link 1</a></li>
+      <li><a href="your-link-here.html">Portfolio Child Link 2</a></li>
+      <li class="has-children dcjq-parent-li"><a href="#" class="dcjq-parent">Portfolio Child w/Child Trigger<span class="dcjq-icon"></span></a>
+       <ul>
+        <li><a href="your-link-here.html">Portfolio Grand Child Link 1</a></li>
+        <li><a href="your-link-here.html">Portfolio Grand Child Link 2</a></li>
+       </ul>
+      </li>
+      <li><a href="your-link-here.html">Portfolio Child Link 3</a></li>
+      <li><a href="your-link-here.html">Portfolio Child Link 4</a></li>
+     </ul>
+    </li>
+   </ul> 
+  </div>
+  
+ <!-- ____________ LARGER VIEWPORT LOGO _______________  -->
+ <div class="logo-lg">
+  <a href="#"> <img src="http://bombdiggitydesign.com/wrap-n-roll/middle/assets/images/logo.png" alt="company name"> </a>
+ </div>
+ <!-- /logo -->  
+  
+  
+  <!-- right side of logo -->
+  <div class="nav-right">
+   <ul class="primary-nav">
+    <li class="has-children dcjq-parent-li"><a href="#" class="dcjq-parent">Services<span class="dcjq-icon"></span></a>
+     <ul>
+      <li><a href="your-link-here.html">Services Child Link 1</a></li>
+      <li><a href="your-link-here.html">Services Child Link 2</a></li>
+      <li class="has-children dcjq-parent-li"><a href="#" class="dcjq-parent">Services Child w/Child Trigger<span class="dcjq-icon"></span></a>
+       <ul>
+        <li><a href="your-link-here.html">Services Grand Child Link 1</a></li>
+        <li><a href="your-link-here.html">Services Grand Child Link 2</a></li>
+       </ul>
+      </li>
+      <li><a href="your-link-here.html">Services Child Link 3</a></li>
+      <li><a href="your-link-here.html">Services Child Link 4</a></li>
+     </ul>
+    </li>
+    <li><a href="your-link-here.html">Blog</a></li>
+    <li><a href="your-link-here.html">Contact</a></li>
+   </ul>
+  </div>
+ 
+ </div><!--/nav-wrapper -->
+ 
+ </nav>
+ 
+
+
+ 
+
+  <hr class="styled top"><!-- styled horizontal rule --> 
+
+</header>
+
+
+<div class="search-wrapper">
+
+  <form role="form" class="text-center">
+   <input type="search" placeholder="Enter search term and press enter" class="form-control">
+  </form>
+ 
+ <!-- toggle search --> 
+ <a href="#" class="toggle-search"><i class="fa fa-search"></i></a>
+</div>
+
+
+
+<script src="http://bombdiggitydesign.com/wrap-n-roll/middle/assets/js/jquery.min.2.0.3.js" type="text/javascript"></script>
+<script type="text/javascript">
+	/*! DC jQuery Vertical Accordion Menu - jQuery vertical accordion menu plugin  |  Copyright (c) 2011 Design Chemical
+    Dual licensed under the MIT and GPL licenses: http://www.opensource.org/licenses/mit-license.php  | http://www.gnu.org/licenses/gpl.html */
+
+(function(a){a.fn.dcAccordion=function(c){var e={classParent:"dcjq-parent",classActive:"active",classArrow:"dcjq-icon",classCount:"dcjq-count",classExpand:"dcjq-current-parent",eventType:"click",hoverDelay:300,menuClose:true,autoClose:true,autoExpand:false,speed:"slow",saveState:true,disableLink:true,showCount:false,cookie:"dcjq-accordion"};var c=a.extend(e,c);this.each(function(p){var h=this;l();if(e.saveState==true){d(e.cookie,h)}if(e.autoExpand==true){a("li."+e.classExpand+" > a").addClass(e.classActive)}j();if(e.eventType=="hover"){var g={sensitivity:2,interval:e.hoverDelay,over:o,timeout:e.hoverDelay,out:n};a("li a",h).hoverIntent(g);var f={sensitivity:2,interval:1000,over:m,timeout:1000,out:i};a(h).hoverIntent(f);if(e.disableLink==true){a("li a",h).click(function(q){if(a(this).siblings("ul").length>0){q.preventDefault()}})}}else{a("li a",h).click(function(q){$activeLi=a(this).parent("li");$parentsLi=$activeLi.parents("li");$parentsUl=$activeLi.parents("ul");if(e.disableLink==true){if(a(this).siblings("ul").length>0){q.preventDefault()}}if(e.autoClose==true){k($parentsLi,$parentsUl)}if(a("> ul",$activeLi).is(":visible")){a("ul",$activeLi).slideUp(e.speed);a("a",$activeLi).removeClass(e.classActive)}else{a(this).siblings("ul").slideToggle(e.speed);a("> a",$activeLi).addClass(e.classActive)}if(e.saveState==true){b(e.cookie,h)}})}function l(){$arrow='<span class="'+e.classArrow+'"></span>';var q=e.classParent+"-li";a("> ul",h).show();a("li",h).each(function(){if(a("> ul",this).length>0){a(this).addClass(q);a("> a",this).addClass(e.classParent).append($arrow)}});a("> ul",h).hide();if(e.showCount==true){a("li."+q,h).each(function(){if(e.disableLink==true){var r=parseInt(a("ul a:not(."+e.classParent+")",this).length)}else{var r=parseInt(a("ul a",this).length)}a("> a",this).append(' <span class="'+e.classCount+'">('+r+")</span>")})}}function o(){$activeLi=a(this).parent("li");$parentsLi=$activeLi.parents("li");$parentsUl=$activeLi.parents("ul");if(e.autoClose==true){k($parentsLi,$parentsUl)}if(a("> ul",$activeLi).is(":visible")){a("ul",$activeLi).slideUp(e.speed);a("a",$activeLi).removeClass(e.classActive)}else{a(this).siblings("ul").slideToggle(e.speed);a("> a",$activeLi).addClass(e.classActive)}if(e.saveState==true){b(e.cookie,h)}}function n(){}function m(){}function i(){if(e.menuClose==true){a("ul",h).slideUp(e.speed);a("a",h).removeClass(e.classActive);b(e.cookie,h)}}function k(q,r){a("ul",h).not(r).slideUp(e.speed);a("a",h).removeClass(e.classActive);a("> a",q).addClass(e.classActive)}function j(){a("ul",h).hide();$allActiveLi=a("a."+e.classActive,h);$allActiveLi.siblings("ul").show()}});function d(g,i){var f=a.cookie(g);if(f!=null){var h=f.split(",");a.each(h,function(k,m){var j=a("li:eq("+m+")",i);a("> a",j).addClass(e.classActive);var l=j.parents("li");a("> a",l).addClass(e.classActive)})}}function b(g,h){var f=[];a("li a."+e.classActive,h).each(function(j){var l=a(this).parent("li");var k=a("li",h).index(l);f.push(k)});a.cookie(g,f,{path:"/"})}}})(jQuery);
+
+</script>
+<script type="text/javascript">
+	$('.toggle-menu').click(function () {
+        $('#nav').slideToggle();
+        $('html').toggleClass('menu-open');
+    });
+    $('.toggle-search').click(function () {
+        $('html').toggleClass('search-open');
+    });
+     $('.primary-nav').dcAccordion({
+        saveState: false,
+        autoClose: true,
+        disableLink: true,
+        speed: "fast",
+        showCount: false, 
+        autoExpand: false
+    });
+
+</script>
+</body>
+</html>

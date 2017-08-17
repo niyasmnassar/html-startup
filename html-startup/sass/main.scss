@@ -1,0 +1,9 @@
+@color{
+    color: brown;
+}
+
+.hello{
+	header{
+	@color;
+	}
+}
